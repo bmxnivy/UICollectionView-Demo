@@ -9,6 +9,7 @@
 #import "ILViewController.h"
 #import "LabelCell.h"
 #import "RoundedCell.h"
+#import "CoverFlowLayout.h"
 #import "RegularFlowLayout.h"
 #import "PinchLayout.h"
 #import "CircleLayout.h"
@@ -57,7 +58,7 @@
     [self.collectionView registerClass:[RoundedCell class] forCellWithReuseIdentifier:@"RoundedCell"];
     
     // init with default flow layout with some customized params (check init to see them)
-    RegularFlowLayout* flowLayout = [[RegularFlowLayout alloc] init];
+    CoverFlowLayout * flowLayout = [[CoverFlowLayout alloc] init];
     self.collectionView.collectionViewLayout = flowLayout;
     
     _rotationRecognizer = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(handleRotationGesture:)];

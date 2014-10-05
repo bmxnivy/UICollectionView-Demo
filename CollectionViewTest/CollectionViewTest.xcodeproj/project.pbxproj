@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		901E665619E1DC7500ADA007 /* CoverFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 901E665519E1DC7500ADA007 /* CoverFlowLayout.m */; };
 		CF3227F7171C8DE3006078AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF3227F6171C8DE3006078AB /* UIKit.framework */; };
 		CF3227F9171C8DE3006078AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF3227F8171C8DE3006078AB /* Foundation.framework */; };
 		CF3227FB171C8DE3006078AB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF3227FA171C8DE3006078AB /* CoreGraphics.framework */; };
@@ -29,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		901E665419E1DC7400ADA007 /* CoverFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoverFlowLayout.h; sourceTree = "<group>"; };
+		901E665519E1DC7500ADA007 /* CoverFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoverFlowLayout.m; sourceTree = "<group>"; };
 		CF3227F3171C8DE3006078AB /* CollectionViewTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionViewTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF3227F6171C8DE3006078AB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CF3227F8171C8DE3006078AB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -139,6 +142,8 @@
 		CFB49EDF171F1CF00040E9C9 /* Layouts */ = {
 			isa = PBXGroup;
 			children = (
+				901E665419E1DC7400ADA007 /* CoverFlowLayout.h */,
+				901E665519E1DC7500ADA007 /* CoverFlowLayout.m */,
 				CFB49EE0171F1D140040E9C9 /* PinchLayout.h */,
 				CFB49EE1171F1D140040E9C9 /* PinchLayout.m */,
 				CFB49EE3171F1D9B0040E9C9 /* LineLayout.h */,
@@ -233,6 +238,7 @@
 				CF322807171C8DE3006078AB /* ILAppDelegate.m in Sources */,
 				CF322813171C8DE3006078AB /* ILViewController.m in Sources */,
 				CF801F8B171DA93200F00812 /* ILActionsViewController.m in Sources */,
+				901E665619E1DC7500ADA007 /* CoverFlowLayout.m in Sources */,
 				CFB49EE2171F1D140040E9C9 /* PinchLayout.m in Sources */,
 				CFB49EE5171F1D9B0040E9C9 /* LineLayout.m in Sources */,
 				CFB49EEA171F31A50040E9C9 /* RegularFlowLayout.m in Sources */,

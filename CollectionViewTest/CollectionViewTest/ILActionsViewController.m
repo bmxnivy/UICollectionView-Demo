@@ -7,12 +7,14 @@
 //
 
 #import "ILActionsViewController.h"
+#import "CoverFlowLayout.h"
 #import "RegularFlowLayout.h"
 #import "LineLayout.h"
 #import "PinchLayout.h"
 #import "CircleLayout.h"
 
 typedef enum {
+    CoverFlowLayoutType,
     RegularLayoutType,
     LineLayoutType,
     PinchLayoutType,
@@ -68,24 +70,29 @@ typedef enum {
     // get the type of layout we have so we can put a checkmark next to it
     UICollectionViewLayout* layout = self.collectionView.collectionViewLayout;
     
+    if ([layout isKindOfClass:[CoverFlowLayout class]]) {
+        self.currentLayout = CoverFlowLayoutType;
+        self.selectedLayoutPath = [NSIndexPath indexPathForRow:0 inSection:1];
+    }
+
     if ([layout isKindOfClass:[RegularFlowLayout class]]) {
         self.currentLayout = RegularLayoutType;
-        self.selectedLayoutPath = [NSIndexPath indexPathForRow:0 inSection:1];
+        self.selectedLayoutPath = [NSIndexPath indexPathForRow:1 inSection:1];
     }
     
     if ([layout isKindOfClass:[LineLayout class]]) {
         self.currentLayout = LineLayoutType;
-        self.selectedLayoutPath = [NSIndexPath indexPathForRow:1 inSection:1];
+        self.selectedLayoutPath = [NSIndexPath indexPathForRow:2 inSection:1];
     }
     
     if ([layout isKindOfClass:[PinchLayout class]]) {
         self.currentLayout = PinchLayoutType;
-        self.selectedLayoutPath = [NSIndexPath indexPathForRow:2 inSection:1];
+        self.selectedLayoutPath = [NSIndexPath indexPathForRow:3 inSection:1];
     }
     
     if ([layout isKindOfClass:[CircleLayout class]]) {
         self.currentLayout = CircleLayoutType;
-        self.selectedLayoutPath = [NSIndexPath indexPathForRow:3 inSection:1];
+        self.selectedLayoutPath = [NSIndexPath indexPathForRow:4 inSection:1];
     }
     
     [self resetCustomizationControlValues];
@@ -207,15 +214,18 @@ typedef enum {
     
     switch (indexPath.row) {
         case 0:
-            self.currentLayout = RegularLayoutType;
+            self.currentLayout = CoverFlowLayoutType;
             break;
         case 1:
-            self.currentLayout = LineLayoutType;
+            self.currentLayout = RegularLayoutType;
             break;
         case 2:
-            self.currentLayout = PinchLayoutType;
+            self.currentLayout = LineLayoutType;
             break;
         case 3:
+            self.currentLayout = PinchLayoutType;
+            break;
+        case 4:
             self.currentLayout = CircleLayoutType;
             
         default:
@@ -237,6 +247,15 @@ typedef enum {
     UICollectionViewLayout* layout = nil;
     
     switch (newLayout) {
+        case CoverFlowLayoutType:
+        {
+            layout = [[CoverFlowLayout alloc] init];
+            // the layout parameters are specifically customized to achieve this look, if we changed them we'll lose it.
+            // that's why we'll disable them
+            [self toggleCustomizationControls:NO];
+            
+            break;
+        }
         case RegularLayoutType:
         {
             layout = [[RegularFlowLayout alloc] init];
